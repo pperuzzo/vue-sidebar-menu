@@ -2,7 +2,7 @@
   <div
     class="v-sidebar-menu"
     :class="[!isCollapsed ? 'vsm_expanded' : 'vsm_collapsed', theme ? `vsm_${theme}` : '', rtl ? 'vsm_rtl' : '']"
-    :style="[relative ? {'position' : 'relative', 'height' : '100%'} : '', {'max-width': sidebarWidth}]"
+    :style="[relative ? {'position' : 'relative', 'height' : '100%'} : '']"
     @mouseleave="onMouseLeave"
   >
     <slot name="header" />
@@ -183,8 +183,7 @@ export default {
           this.rtl ? { 'padding-right': this.sidebarWidth } : { 'padding-left': this.sidebarWidth },
           this.rtl && { 'direction': 'rtl' },
           { 'z-index': 0 },
-          { 'width': `calc(${this.parentWidth} - ${this.parentOffsetLeft})` },
-          { 'max-width': this.width }
+          { 'width': `calc(${this.parentWidth} - ${this.parentOffsetLeft})` }
         ],
         dropdown: [
           { 'position': 'absolute' },
